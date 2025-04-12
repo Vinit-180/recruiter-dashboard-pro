@@ -1,4 +1,3 @@
-
 import { Resume } from '@/types/resume';
 import { toast } from 'sonner';
 
@@ -109,7 +108,7 @@ export const evaluateResumes = (resumeIds: string[]): Promise<Resume[]> => {
         if (resumeIds.includes(resume.id)) {
           return {
             ...resume,
-            status: 'evaluating'
+            status: 'evaluating' as const
           };
         }
         return resume;
